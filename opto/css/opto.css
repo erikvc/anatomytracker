@@ -1,0 +1,159 @@
+@charset "utf-8";
+/* CSS Document */
+
+a{
+	text-decoration: none;
+}
+html, body {
+   margin:0;
+   padding:0;
+   height:100%;
+}
+
+input{
+	border: 1px solid #D5D5D5;
+	border-radius: 4px;
+	width: 100%;
+	box-sizing: border-box;
+	padding: 12px;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #CFCFCF;
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: #CFCFCF;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+  color: #CFCFCF;
+}
+
+.opto-h2{
+	font-size: 24px;
+	color: #3861AD;
+}
+.opto-h4{
+	font-size: 14px;
+	color: #AAAAAA;
+	text-align: center;
+}
+.opto-center-content{
+	padding: 0px 30px 0px 30px;
+}
+
+.tudo {
+   min-height:100%;
+   position:relative;
+   padding-bottom: 100px;	
+}
+
+/***********HEADER*******/
+.opto-header-container{
+	height: 99px;
+	width: 100%;
+	box-sizing: border-box;
+	position: relative;
+	background-image: linear-gradient(to right, #385dab, #3666b1, #356fb7, #3678bc, #3981c1);
+}
+.opto-header-logo{
+	position: absolute;
+	left: 50%;
+	transform: translate(-50%, 0%);
+	top: 44px;
+}
+.opto-header-menuIcon{
+	position: absolute;
+	top: 60px;
+	right: 15px;
+}
+.opto-header-menuIcon i{
+	color: #ffffff;
+	font-size: 22px;
+}
+.opto-header-btoBack{
+	position: absolute;
+	top: 60px;
+	left: 15px;
+}
+.opto-header-btoBack i{
+	color: #ffffff;
+	font-size: 22px;
+}
+
+.tudo {
+   min-height:100%;
+   position:relative;
+}
+
+
+/**********MIDDLE SECTION********/
+.opto-midlleLogo{
+	text-align: center;
+	margin-top: 95px;
+	margin-bottom: 50px;
+}
+
+/*********BOTÃO 1*********/
+.opto-btoContainer{
+	padding: 0px 14px 0px 14px;
+}
+.opto-button1{
+	padding: 12px;
+	width: 100%;
+	color: #ffffff;
+	box-sizing: border-box;
+	background-image: linear-gradient(to right, #385dab, #3666b1, #356fb7, #3678bc, #3981c1);
+	border-radius: 4px;
+	text-align: center;
+	display: block;
+	cursor: pointer;
+	border: 0px;
+}
+.opto-button1 a{
+	text-decoration: none;
+}
+
+/************FOOTER*********/
+.opto-footer{
+	position:absolute;
+    bottom:0;
+    width:100%;
+    /*background:#6cf;*/
+}
+.opto-textFooter{
+	padding: 14px;
+	text-align: center;
+}
+
+
+
+
+
+/********FORM********/
+.opto-box-checkbox{
+	position: relative;
+}
+.opto-box-checkbox input{
+	position: absolute;
+	left: 0px;
+	top: 5px;
+	width: 18px;
+	height: 18px;
+}
+.opto-box-checkbox label{
+	position: absolute;
+	left: 24px;
+	top: 0px;
+}
+
+
+/********ESPAÇADORES*******/
+.opto-margin14px{
+	margin-bottom: 14px;
+}
+.opto-marginTop50px{
+	margin-top: 50px;
+}
