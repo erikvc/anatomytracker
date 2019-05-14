@@ -12,23 +12,23 @@ $("#opto-form-create-admin").submit(function (e){
     e.preventDefault();
     var formData = new FormData(this);
     $.ajax({
-        url: url+"createAdmin.php",
+        url: url+"webservice/createAdmin.php",
         type: 'POST',
         data: formData,
         before: function(){
-            $(".lightbox-wait").fadeIn('slow');
+            $("#opto-loading-overlay").fadeIn('slow');
         },
         success: function (newClientReturn) {
             if(newClientReturn == 'ok'){
-                $('#form-cadastrar input').val('');
-                $('.lightbox-label').html('Cadastrado com Sucesso!');
+                $('#opto-form-create-admin input').val('');
+                //$('.lightbox-label').html('Cadastrado com Sucesso!');
                 setTimeout(function(){
-                    $(".lightbox-wait").fadeOut('slow');
-                    window.location.href = "login.html";
+                    $("#opto-loading-overlay").fadeOut('slow');
+                    //window.location.href = "login.html";
                 },3000)
                 
             }else{
-                $(".lightbox-label").text(newClientReturn);
+                alert(newClientReturn);
             }
         },
         cache: false,
@@ -39,7 +39,7 @@ $("#opto-form-create-admin").submit(function (e){
             if (myXhr.upload) { // Avalia se tem suporte a propriedade upload
                 myXhr.upload.addEventListener('progress', function () {
                     /* faz alguma coisa durante o progresso do upload */
-                    $(".lightbox-wait").fadeIn('slow');
+                    $("#opto-loading-overlay").fadeIn('slow');
                 }, false);
             }
             return myXhr;
