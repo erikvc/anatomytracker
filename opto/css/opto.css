@@ -1,6 +1,9 @@
 @charset "utf-8";
 /* CSS Document */
-
+*{
+	margin: 0;
+	padding: 0;
+}
 a{
 	text-decoration: none;
 }
@@ -51,6 +54,16 @@ input{
 }
 
 /***********HEADER*******/
+
+.opto-background-gradient{
+	background-image: linear-gradient(to right, #385dab, #3666b1, #356fb7, #3678bc, #3981c1);
+}
+
+.opto-header{
+	-webkit-box-shadow: 0px 6px 10px 0px rgba(0,0,0,0.17);
+	-moz-box-shadow: 0px 6px 10px 0px rgba(0,0,0,0.17);
+	box-shadow: 0px 6px 10px 0px rgba(0,0,0,0.17);
+}
 .opto-header-container{
 	height: 99px;
 	width: 100%;
@@ -98,7 +111,7 @@ input{
 
 /*********BOTÃO 1*********/
 .opto-btoContainer{
-	padding: 0px 14px 0px 14px;
+	padding: 0px 30px 0px 30px;
 }
 .opto-button1{
 	padding: 12px;
@@ -115,6 +128,40 @@ input{
 .opto-button1 a{
 	text-decoration: none;
 }
+.opto-button2{
+	position: relative;
+	padding: 12px;
+	width: 100%;
+	color: #AAAAAA;
+	box-sizing: border-box;
+	background-color: #ffffff;
+	border-radius: 4px;
+	text-align: left;
+	display: block;
+	cursor: pointer;
+	border: 0px;
+	font-size: 14px;
+}
+.opto-button2-arrow{
+	position: absolute;
+	right: 14px;
+	top: 50%;
+	transform: translate(0%, -50%)
+}
+.opto-button3{
+	padding: 12px;
+	width: 100%;
+	color: #000000;
+	box-sizing: border-box;
+	background-color: #ffffff;
+	border-radius: 4px;
+	text-align: center;
+	display: block;
+	cursor: pointer;
+	border: 0px;
+	font-size: 14px;
+}
+
 
 /************FOOTER*********/
 .opto-footer{
@@ -161,24 +208,153 @@ input{
 
 
 /********LOADING******/
-.opto-loading-overlay{
-	position: absolute;
-	top: 0px;
-	left: 0px;
-	width: 100%;
-	height: 100%;
-	background-color: rgba(0,0,0,0.40);
-	z-index: 10000;
+.opto-loading{
 	display: none;
 }
-.opto-loading-box{
-	padding: 50px;
-	background-color: #ffffff;
+
+
+/********SIGN IN********/
+.opto-central-logo2{
+	margin-top: 30px;
 	text-align: center;
-	width: 200px;
-	border-radius: 15px;
+}
+
+
+/*********ERROR AND SUCCESS MESSAGES********/
+.opto-errorSuccess{
+	padding: 14px;
+	background-color: #E56E70;
+	color: #FFFFFF;
+	text-align: center;
+	border-radius: 5px;
+	display: none;
+}
+
+/********FORMATA LOGIN TYPE*****/
+.opto-loginType{
 	position: absolute;
-	left: 50%;
+	width: 55%;
+	font-size: 18px;
+	color: #AAAAAA;
+}
+.opto-loginType input{
+	width: 18px;
+	height: 18px;
+}
+
+/**BACKGROUND BLUE**/
+.opto-backgroundBlue{
+	background-image: linear-gradient(to bottom, #385dab, #3666b1, #356fb7, #3678bc, #3981c1);
+}
+
+.opto-imagem-redonda{
+	text-align: center;
+}
+.opto-imagem-redonda-box{
+	position: relative;
+	width: 90px;
+	height: 90px;
+	margin: 0 auto;
+}
+.opto-imagem-redonda img{
+	border-radius: 100%;
+	border: 2px solid #FFFFFF;
+}
+.opto-editIcon-imageProfile{
+	position: absolute;
+	top: 50px;
+	right: -15px;
+	color: #ffffff;
+	font-size: 24px;
+}
+.opto-user-id-box{
+	position: relative;
+	padding: 14px;
+	color: #ffffff;
+	font-size: 20px;
+	clear: both;
+	min-height: 100px;
+	border-radius: 3px;
+}
+.opto-user-id-box-icon{
+	position: absolute;
+	left: 14px;
+	font-size: 20px;
 	top: 50%;
-	transform: translate(-50%, -50%);
+	transform: translate(0%, -50%);
+}
+.opto-user-id-box-text{
+	position: absolute;
+	line-height: 26px;
+	left: 45px;
+	top: 50%;
+	transform: translate(0%, -50%);
+}
+
+
+
+
+.opto-central-user-list{
+	text-align: center;
+	color: #356fb7;
+	font-size: 58px;
+}
+
+
+
+/*******USERS LIST*-****/
+.opto-list-box{
+	position: relative;
+	border-bottom: 2px solid #F1F1F3;
+	padding-bottom: 16px;
+	margin-bottom: 20px;
+}
+.opto-list-image{
+	position: absolute;
+	left: 0px;
+	top: 0px;
+}
+.opto-list-image img{
+	width: 60px;
+	height: 60px;
+	border-radius: 100%;
+	border: 1px solid #EEEEEE;
+}
+.opto-box-text{
+	position: relative;
+	padding-left: 70px;
+}
+.opto-list-function{
+	color: #95989A;
+	font-size: 12px;
+}
+.opto-list-name{
+	color: #19769F;
+	font-size: 14px;
+}
+.opto-list-location{
+	font-size: 10px;
+	color: #51565F;
+	margin-top: 5px;
+}
+.opto-list-location i{
+	color: #356fb7;
+}
+
+.opto-list-arrow i{
+	position: absolute;
+	right: 0px;
+	top: 50%;
+	transform: translate(0%, -50%);
+	color: #A4AFB7;
+	font-size: 18px;
+}
+.opto-online-ball{
+	position: absolute;
+	top: 4px;
+	left: 0px;
+	width: 13px;
+	height: 13px;
+	background-color: #4BBC13;
+	border-radius: 100%;
 }

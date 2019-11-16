@@ -29,21 +29,24 @@
   </section>
 	<!----CENTRAL CONTENT---->
 	<section class="opto-center-content">
-		<h2 class="opto-h2 opto-marginTop50px opto-margin14px">Create Admin Account</h2>
-		<form id="opto-form-create-admin" enctype="multipart/form-data">
-			<input class="opto-margin14px" type="text" name="accountName" required placeholder="Account Name">
+	  <h2 class="opto-h2 opto-margin14px opto-marginTop50px">Welcome to</h2>
+	  <div class="opto-user-id-box opto-margin14px opto-background-gradient">
+	  	  <div class="opto-user-id-box-icon"><i class="far fa-id-badge"></i></div>
+		  <div class="opto-user-id-box-text">
+		  	<b id="opto-recebe-accountname">Account Name</b><br>
+			  ID: <b id="opto-recebe-inviteID">58954562</b>
+		  </div>
+	  </div>	
+	  <h2 class="opto-h2 opto-margin14px opto-marginTop50px">Create your Profile</h2>
+	  <form id="opto-form-create-users" enctype="multipart/form-data">
 			<input class="opto-margin14px" type="text" name="first" required placeholder="First Name">
 			<input class="opto-margin14px" type="text" name="last" required placeholder="Last Name">
 			<input class="opto-margin14px" type="text" name="title" required placeholder="Title">
 			<input class="opto-margin14px" type="phone" name="officePhone" placeholder="Office Phone">
 			<input class="opto-margin14px" type="phone" name="mobilePhone" required placeholder="Mobile Phone">
-			<input class="opto-margin14px" type="text" name="address" required placeholder="Street Address">
-			<input class="opto-margin14px" type="text" name="city" required placeholder="City">
-			<input class="opto-margin14px" type="text" name="state" required placeholder="State">
-			<input class="opto-margin14px" type="text" name="postalCode" required placeholder="Postal Code">
-			<input class="opto-margin14px" type="text" name="country" required  placeholder="Country">
+
 			<input class="opto-margin14px" type="text" name="username" required placeholder="Username">
-			<input class="opto-margin14px" type="email" name="email" required placeholder="Email">
+			<input class="opto-margin14px" id="opto-email-disable" type="email" name="email" disabled required placeholder="Email">
 			<input class="opto-margin14px" type="password" name="password" required placeholder="Password">
 			<input class="opto-margin14px" type="file" name="imagem" required placeholder="Picture">
 			<div class="opto-box-checkbox">
@@ -68,5 +71,9 @@
 <script type="text/javascript" src="cordova.js"></script>	
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
+	<script>
+		setInviteInfo();
+	</script>
+	
 </body>
 </html>

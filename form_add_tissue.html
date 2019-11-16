@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en" class="opto-body">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">	
+<title>Anatomy Tracker</title>
+
+<!--CHAMADAS OPTO-->
+<link href="opto/css/reset.css" rel="stylesheet" type="text/css">	
+<link href="opto/css/opto.css" rel="stylesheet" type="text/css">
+<link href='https://fonts.googleapis.com/css?family=Raleway:900,800,700' rel='stylesheet' type='text/css'>
+<link href="opto/css/font-awesome.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">	
+	
+	
+</head>
+
+<body class="opto-body">
+	
+<section class="tudo">	
+	
+	<section class="opto-header">
+		<div class="opto-header-container">
+			<div class="opto-header-logo"><img src="opto/images/header/logo.png" width="43" height="43" alt=""/></div>
+			<div class="opto-header-menuIcon"><a href="index.html"><i class="fas fa-home"></i></a></div>
+			<div class="opto-header-btoBack"><a href="#" id="top-back"><i class="fas fa-chevron-left"></i></a></div>
+		</div>
+  </section>
+	<!----CENTRAL CONTENT---->
+	<section class="opto-center-content">
+		<h2 class="opto-h2 opto-marginTop50px opto-margin14px">Add Tissue</h2>
+		<form id="opto-form-create-tissue" enctype="multipart/form-data">
+			<input class="opto-margin14px" type="text" name="type" required placeholder="Type (whole or part)">
+			<input class="opto-margin14px" type="text" name="gender" required placeholder="Gender">
+			<input class="opto-margin14px" type="text" name="age" required placeholder="Age">
+			<input class="opto-margin14px" type="date" name="dateofdeath" required placeholder="Date of Death (DOD)">
+			<input class="opto-margin14px" type="text" name="causeofdeath" placeholder="Cause of Death (COD)">
+			<input class="opto-margin14px" type="text" name="embalmedType" required placeholder="Embalmed Type (none, formaldehyde, SPA, SPS)">
+			<!--<input class="opto-margin14px" type="text" name="dateEmbalmed" required placeholder="Date Embalmed">-->
+			<input class="opto-margin14px" type="date" name="dateEmbalmed" required placeholder="Date Embalmed (DOD)">
+			<input class="opto-margin14px" type="text" name="intendedUse" required placeholder="Intended Use">
+			<input class="opto-margin14px" type="text" name="termofuse" required placeholder="Term of use (1yr, 2yr, 3yr….">
+			<input class="opto-margin14px" type="text" name="othrlimitations" required placeholder="Other Limitations of use">
+			<input class="opto-margin14px" type="date" name="datebedisposed" required placeholder="Date to be disposed by (MMDDYYYY">
+			<input class="opto-margin14px" type="text" name="returnremains" required  placeholder="Return remains to">
+			<input class="opto-margin14px" type="text" name="lastScanned" required placeholder="Last Scanned Location">
+			<input class="opto-margin14px" type="text" name="scannedBy" required placeholder="Scanned by (First - Last Name)">
+			<input class="opto-margin14px" type="date" name="dateScanned" required placeholder="Date Scanned">
+			<input class="opto-margin14px" type="text" name="tissueBank" required placeholder="Tissue Bank">
+			<input class="opto-margin14px" type="text" name="contact" required placeholder="Contact">
+			<input class="opto-margin14px" type="text" name="name" required placeholder="Name">
+			<input class="opto-margin14px" type="text" name="email" required placeholder="Email">
+			<input class="opto-margin14px" type="text" name="phone" required placeholder="Phone">
+			<input class="opto-margin14px" type="text" name="streetAddress" required placeholder="Street Address">
+			<input class="opto-margin14px" type="text" name="city" required placeholder="City">
+			<input class="opto-margin14px" type="text" name="state" required placeholder="State">
+			<input class="opto-margin14px" type="text" name="postalCode" required placeholder="Postal Code">
+			<input class="opto-margin14px" type="text" name="country" required placeholder="Country">
+			
+			<input id="addByAdmin" class="opto-margin14px" type="hidden" name="addByAdmin">
+			
+
+			<button type="submit" class="opto-button1 opto-margin14px opto-marginTop50px">Add Tissue</button>
+			<div class="opto-loading opto-margin14px" id="opto-loading"><img src="opto/images/QUu7ygb.gif" width="100%" alt=""/></div>
+
+			
+		</form>
+	</section>
+	<!----END CENTRAL CONTENT---->
+	<footer class="opto-footer">
+		<div class="opto-textFooter"><a href="#">term of use</a> | <a href="#">privacy policy</a></div>	
+	</footer>	
+	
+</section>	
+<!--CHAMADAS OPTO-->
+<script type="text/javascript" src="opto/js/jquery-3.3.1.min.js"></script>	
+<script type="text/javascript" src="opto/js/opto.js"></script>	
+<script type="text/javascript" src="cordova.js"></script>	
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	
+	<script>
+				var adminID = localStorage.getItem("userID");
+				$("#addByAdmin").val(adminID);
+			</script>
+
+</body>
+</html>

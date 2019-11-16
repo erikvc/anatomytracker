@@ -6,31 +6,22 @@ header('Content-Type: text/html; charset=utf-8');
 
 require("conexaoPDO.php");
 
-$accountName = $_POST['accountName'];
 $first = $_POST['first'];
 $last = $_POST['last'];
 $title = $_POST['title'];
 $officePhone = $_POST['officePhone'];
 //$dataNascimentoConvertida = date('Y-m-d', strtotime($dataNascimento));
 $mobilePhone = $_POST['mobilePhone'];
-$address = $_POST['address'];
-$city = $_POST['city'];
-$state = $_POST['state'];
-$postalCode = $_POST['postalCode'];
-$country = $_POST['country'];
 $username = $_POST['username'];
 $email = $_POST['email'];
 $password = $_POST['password'];
 $terms = $_POST['terms'];
 $images    = $_FILES['imagem'];
 
-var_dump($images);
+//var_dump($images);
 
-/*$name = $_GET['name'];
-$email = $_GET['email'];
-$password = $_GET['password'];
-$code = $_GET['code'];*/
-/*
+
+
 		$tiposPermitidos= array('gif', 'jpeg', 'jpg', 'pjpeg', 'png');
 		$images    = $_FILES['imagem']['name'];
 		$imagesType    = $_FILES['imagem']['type'];
@@ -50,7 +41,8 @@ $code = $_GET['code'];*/
                 $resizeObj -> resizeImage(200, 200, 'crop');
                 $resizeObj -> saveImage('../images/'.$imgFileName, 80);
 				
-				$sqlPegaTasks = mysqli_query($conexao, "INSERT INTO admin (accountName, first, last, title, officePhone, mobilePhone, address, city, state, postalCode, country, username, email, password,image, creation_date)VALUES('$accountName', '$first', '$last', '$title', '$officePhone', '$mobilePhone', '$address', '$city', '$state', '$postalCode', '$country', '$username', '$email', '$password', '$imgFileName', NOW())") or die(mysqli_error($conexao));
+				
+				$sqlPegaTasks = mysqli_query($conexao, "INSERT INTO users (first, last, title, officePhone, mobilePhone, username, email, password, image, type, creation_date)VALUES('$first', '$last', '$title', '$officePhone', '$mobilePhone', '$username', '$email', '$password', '$imgFileName', 0, NOW())") or die(mysqli_error($conexao));
                 
                 $removeTemp = unlink('../images/temp/'.$imgFileName);
 				
@@ -59,6 +51,7 @@ $code = $_GET['code'];*/
 				echo 'A senha não confere ou o arquivo de imagem tem um formato não permitido!';
 			}
 
-*/
+			
+
 
 ?>

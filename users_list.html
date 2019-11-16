@@ -17,32 +17,30 @@
 </head>
 
 <body class="opto-body">
-
 	
 <section class="tudo">	
 	
-	<section class="opto-header">
+	<section>
 		<div class="opto-header-container">
 			<div class="opto-header-logo"><img src="opto/images/header/logo.png" width="43" height="43" alt=""/></div>
 			<div class="opto-header-menuIcon"><a href="index.html"><i class="fas fa-home"></i></a></div>
 			<div class="opto-header-btoBack"><a href="#" id="top-back"><i class="fas fa-chevron-left"></i></a></div>
 		</div>
+    </section>
+	
+	<section style="margin-top: 40px;">
+		<div class="opto-central-user-list"><i class="far fa-id-badge"></i></div>
 	</section>
-
-	<section>
-		<div class="opto-midlleLogo"><img src="opto/images/logo.png" width="187" height="128" alt=""/></div>
+	
+	<!----CENTRAL CONTENT---->
+	<section class="opto-center-content">
+	  <h2 class="opto-h2 opto-marginTop50px opto-margin14px">Members Directory</h2>
+	  <div class="opto-users-list" id="recebe-members-list">
+		 <!---------->
+	  </div>
+		
 	</section>
-
-	<section>
-		<div class="opto-btoContainer">
-			<a href="login.html"><div class="opto-button1 opto-margin14px"><i class="fas fa-sign-in-alt"></i>&nbsp;Sign in</div></a>
-			<a href="create_admin_account.html"><div class="opto-button1 opto-margin14px"><i class="fas fa-plus"></i>&nbsp;Create Admin Account</div></a>
-			<a href="join_users.html"><div class="opto-button1 opto-margin14px"><i class="fas fa-user"></i>&nbsp;Join Account</div></a>
-			<a href="#"><div class="opto-button1 opto-margin14px"><i class="fas fa-qrcode"></i>&nbsp;Scan Code</div></a>
-			<a href="#" onClick="return logout();"><div class="opto-button1 opto-margin14px"><i class="fas fa-sign-out-alt"></i>&nbsp;Sign out</div></a>
-		</div>	
-	</section>
-
+	<!----END CENTRAL CONTENT---->
 	<footer class="opto-footer">
 		<div class="opto-textFooter"><a href="#">term of use</a> | <a href="#">privacy policy</a></div>	
 	</footer>	
@@ -54,5 +52,7 @@
 <script type="text/javascript" src="cordova.js"></script>	
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
+	<script>pegaMembers();</script>
+	
 </body>
 </html>
