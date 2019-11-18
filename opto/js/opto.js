@@ -351,3 +351,5 @@ function pegaUserProfile(){
 	$("#user-image-profile").attr('src', url+'anatomytracker/images/'+userImage);
 	$("#user-name-profile").html("Welcome "+firstName);
 }
+
+

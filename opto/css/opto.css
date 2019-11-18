@@ -358,3 +358,39 @@ input{
 	background-color: #4BBC13;
 	border-radius: 100%;
 }
+
+
+
+/**************SCAN SCREEN*********/
+.scan-blue-box{
+	position: relative;
+}
+.scan-blue-box-icon{
+	position: absolute;
+	left: 20px;
+	top: 50%;
+	transform: translate(0%, -50%)
+}
+.scan-blue-box-icon i{
+	font-size: 18px;
+}
+.scan-blue-box-title{
+	text-align: left;
+	padding-left: 40px;
+}
+
+/*********************TISSUE DETAIL*****************/
+.opto-tissue-detail-box{
+	position: relative;
+	margin-bottom: 14px;
+	padding-bottom: 14px;
+	border-bottom: 1px solid #E7E7E7;
+}
+.opto-tissue-detail-label{
+	font-size: 16px;
+	font-weight: bold;
+}
+.opto-tissue-detail-value{
+	font-size: 14px;
+	color: #B3B3B3;
+}
