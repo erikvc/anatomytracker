@@ -289,8 +289,57 @@ function pegaTissue(){
 			   alert('There are no tissue yet for this administrator.');
 			}else{
 				for(var i=0;dados.length>i;i++){
-					$("#recebe-tissue-list").append('<div class="opto-list-box"><div class="opto-list-image"><img src="'+url+'anatomytracker/images/dummy-user.jpg" width="200" height="200" alt=""/><div class="opto-online-ball"></div></div><div class="opto-box-text"><div class="opto-list-name">'+dados[i].first+'</div><div class="opto-list-function">'+dados[i].username+'</div><div class="opto-list-location"><i class="fas fa-map-marker-alt"></i> Dishant Hospital, Ring road, Nagpur</div></div><div class="opto-list-arrow"><i class="fas fa-chevron-right"></i></div></div>');
+					$("#recebe-tissue-list").append('<div class="opto-list-box"><div class="opto-list-image"><img src="'+url+'anatomytracker/images/dummy-user.jpg" width="200" height="200" alt=""/><div class="opto-online-ball"></div></div><div class="opto-box-text"><div class="opto-list-name">'+dados[i].first+'</div><div class="opto-list-function">'+dados[i].username+'</div><div class="opto-list-location"><i class="fas fa-map-marker-alt"></i> Dishant Hospital, Ring road, Nagpur</div></div><div class="opto-list-arrow"><a href="#" id="btoOpenTissue" onCLick="return abreTissueDetail('+dados[i].id+');"><i class="fas fa-chevron-right"></i></a></div></div>');
 				}
+			}
+		},
+		error: function(dados){
+			alert(console.log(dados));
+		}
+	})
+}
+
+
+/***************PEGA TISSUE DETAIL***************/
+function pegaTissueDetail(){
+	
+	var tissue_id = localStorage.getItem("tissue_id");
+	//var tissue_id = localStorage.getItem('tissue_id');
+	
+	$.ajax({
+		url: url+'anatomytracker/webservice/pegaTissueDetail.php',
+		type: 'get',
+		crossDomain: true,
+		dataType: 'json',
+		data: 'id='+tissue_id,
+		success: function(dados){
+			if(dados.length == 0){
+			   alert('nothing has been found!');
+				window.location.href="index.html";
+			}else{
+				$("#t1").html(dados[0].type);
+				$("#t2").html(dados[0].gender);
+				$("#t3").html(dados[0].age);
+				$("#t4").html(dados[0].dateofdeath);
+				$("#t5").html(dados[0].causeofdeath);
+				$("#t6").html(dados[0].embalmedType);
+				$("#t7").html(dados[0].intendedUse);
+				$("#t8").html(dados[0].termofuse);
+				$("#t9").html(dados[0].otherlimitations);
+				$("#t10").html(dados[0].datebedisposed);
+				$("#t11").html(dados[0].returnremains);
+				$("#t12").html(dados[0].lastScanned);
+				$("#t13").html(dados[0].dateScanned);
+				$("#t14").html(dados[0].tissueBank);
+				$("#t15").html(dados[0].contact);
+				$("#t16").html(dados[0].name);
+				$("#t17").html(dados[0].email);
+				$("#t18").html(dados[0].phone);
+				$("#t19").html(dados[0].streetAddress);
+				$("#t20").html(dados[0].city);
+				$("#t21").html(dados[0].state);
+				$("#t22").html(dados[0].postalCode);
+				$("#t23").html(dados[0].country);
 			}
 		},
 		error: function(dados){
@@ -353,3 +402,63 @@ function pegaUserProfile(){
 }
 
 
+
+
+/**************BOTÂO NO TISSUE DIRETORY, ABRE TISSUE DETAILS***************/
+function abreTissueDetail(tissue_id){
+	localStorage.setItem("tissue_id", tissue_id);
+	window.location.href="tissue_details.html";
+}
+
+
+
+/****************QR CODE SCANNER*************/
+
+onDeviceReady: function() {
+    this.receivedEvent('deviceready');
+
+    document.querySelector("#prepare").addEventListener("touchend", function() {
+        window.QRScanner.prepare(onDone); // show the prompt
+
+    });
+
+    document.querySelector("#show").addEventListener("touchend", function() {
+        window.QRScanner.show();
+
+    });
+
+    document.querySelector("#scan").addEventListener("touchend", function() {
+        window.QRScanner.scan(displayContents);
+
+    });
+
+    function onDone(err, status){
+        if (err) {
+            // here we can handle errors and clean up any loose ends.
+            console.error(err);
+        }
+        if (status.authorized) {
+            // W00t, you have camera access and the scanner is initialized.
+            // QRscanner.show() should feel very fast.
+			window.QRScanner.show();
+        } else if (status.denied) {
+            // The video preview will remain black, and scanning is disabled. We can
+            // try to ask the user to change their mind, but we'll have to send them
+            // to their device settings with `QRScanner.openSettings()`.
+        } else {
+            // we didn't get permission, but we didn't get permanently denied. (On
+            // Android, a denial isn't permanent unless the user checks the "Don't
+            // ask again" box.) We can ask again at the next relevant opportunity.
+        }
+    }
+
+    function displayContents(err, text){
+        if(err){
+            // an error occurred, or the scan was canceled (error code `6`)
+        } else {
+            // The scan completed, display the contents of the QR code:
+            //alert(text);
+			abreTissueDetail(text)
+        }
+    }
+},
