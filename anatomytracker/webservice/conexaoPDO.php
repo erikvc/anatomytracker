@@ -8,7 +8,7 @@ if(mysqli_connect_errno()){
 	echo 'Erro na conexão:'.mysqli_connect_errno();
 }*/
 
-$conexao = mysqli_connect("mariadb-019.wc1.lan3.stabletransit.com", "342005_bsi_at", "Password1234", "342005_bsi_at");
+$conexao = mysqli_connect("localhost", "optocrea_anatomy", "Password1234", "optocrea_anatomytracker");
 
 if(mysqli_connect_errno()){
 	echo 'Erro na conexão:'.mysqli_connect_errno();

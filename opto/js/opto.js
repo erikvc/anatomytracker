@@ -1,6 +1,6 @@
 // JavaScript Document
 
-const url = '';
+const url = 'https://www.optocreative.com/APPS/';
 
 /*=================BOTÃO VOLTAR DO TOPO==============*/
 $("#top-back").click(function(){
@@ -414,23 +414,18 @@ function abreTissueDetail(tissue_id){
 
 /****************QR CODE SCANNER*************/
 
-onDeviceReady: function() {
-    this.receivedEvent('deviceready');
 
-    document.querySelector("#prepare").addEventListener("touchend", function() {
-        window.QRScanner.prepare(onDone); // show the prompt
+	$("#prepare").click(function(){
+		window.QRScanner.prepare(onDone); // show the prompt
+	});
 
-    });
+	$("#show").click(function(){
+		window.QRScanner.show();
+	});
 
-    document.querySelector("#show").addEventListener("touchend", function() {
-        window.QRScanner.show();
-
-    });
-
-    document.querySelector("#scan").addEventListener("touchend", function() {
-        window.QRScanner.scan(displayContents);
-
-    });
+	$("#scan").click(function(){
+		window.QRScanner.scan(displayContents);
+	});
 
     function onDone(err, status){
         if (err) {
@@ -461,4 +456,24 @@ onDeviceReady: function() {
 			abreTissueDetail(text)
         }
     }
-},
+
+
+
+/************EDIT USER ACCOUNT************/
+function GetEditUser(){
+	$.ajax({
+		url: url+'anatomytracker/webservice/pegaAccountEdit.php',
+		type: 'get',
+		crossDomain: true,
+		dataType: 'json',
+		data: 'id=31',//+admin_id,
+		success: function(dados){
+				for(var i=0;dados.length>i;i++){
+					$("#recebe-tissue-list").append('<div class="opto-list-box"><div class="opto-list-image"><img src="'+url+'anatomytracker/images/dummy-user.jpg" width="200" height="200" alt=""/><div class="opto-online-ball"></div></div><div class="opto-box-text"><div class="opto-list-name">'+dados[i].first+'</div><div class="opto-list-function">'+dados[i].username+'</div><div class="opto-list-location"><i class="fas fa-map-marker-alt"></i> Dishant Hospital, Ring road, Nagpur</div></div><div class="opto-list-arrow"><a href="#" id="btoOpenTissue" onCLick="return abreTissueDetail('+dados[i].id+');"><i class="fas fa-chevron-right"></i></a></div></div>');
+				}
+		},
+		error: function(dados){
+			alert(console.log(dados));
+		}
+	})
+}

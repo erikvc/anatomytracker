@@ -394,3 +394,10 @@ input{
 	font-size: 14px;
 	color: #B3B3B3;
 }
+
+
+/**********************VIEW PROFILE PAGE*******************/
+.opto-view-profile li label{
+	font-size: 14px;
+	color: #003C8F;
+}
